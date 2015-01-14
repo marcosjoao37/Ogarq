@@ -1,0 +1,3 @@
+#!bin/bash/
+
+gksu{/home/joao/PycharmProjects/Ogarq/InterfaceOgarq.py}
