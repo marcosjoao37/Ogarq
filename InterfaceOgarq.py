@@ -17,6 +17,7 @@ class MyApp:
         label_width = 45
 
         button_width = 15
+        button_width_a = 60
         button_padx = "2m"
         button_pady = "1m"
 
@@ -80,17 +81,23 @@ class MyApp:
         self.button3.configure(
             width = button_width,
             padx = button_padx,
-            pady = button_pady,
             text = "OK",
         )
         self.button3.bind("<Button-1>", lambda event, esc=self.esc: self.buttonOk(event, esc))
         self.button3.pack(side=BOTTOM)
 
+        #----------------EntradaDoDiretorio
+        self.entradaDir = Entry(self.okFrame)
+        self.entradaDir.configure(
+            width = button_width_a
+        )
+        self.entradaDir.pack(side=BOTTOM)
+
     def buttonOk(self, event, esc):
         if self.esc == "0":
             message.showinfo("ERRO","OPÇÃO INVÁLIDA")
         else:
-            ogarq.leituraArq(self.esc)
+            ogarq.leituraArq(self.esc, str(self.entradaDir.get()))
 
     def buttonClicked_b(self, event, opc):
         self.esc = opc
@@ -105,7 +112,7 @@ class MyApp:
 ogarq = Ogar()
 message = messagebox
 root = Tk()
-root.title("Ogarq 2.2")
+root.title("Ogarq 2.5")
 myapp = MyApp(root)
 root.geometry("500x300")
 root.mainloop()
