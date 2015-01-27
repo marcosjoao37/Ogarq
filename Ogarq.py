@@ -32,11 +32,11 @@ class Ogar:
         os.system("sudo chmod -R 777 "+self.dir)
 
         #Criação das listas com o nome do diretório completo mais o nome do arquivo. Ex: /home/usr/Downloads/foto.jpg.
-        self.listFoto = []
-        ext = 'jpg, png, bmp, jpeg, gif'.split(',')
-        for i in ext:
-            for j in glob.glob(self.dir+'*.' + i):
-                self.listFoto.append(j)
+        self.listFoto = [] # crica uma lista vazia
+        ext = 'jpg, png, bmp, jpeg, gif'.split(',') # ext é a variavel que conterá as extensões de arquivos de imagem
+        for i in ext: # percorre todos os elementos da lista ext
+            for j in glob.glob(self.dir+'*.' + i): # percorre todas das ocorrencias de arquivos com extensão de imagem
+                self.listFoto.append(j) # salva o caminho dos arquivos de imagem na lista self.listFoto
 
         self.listMus= []
         ext = 'mp3, wav, flac, aac'.split(',')
