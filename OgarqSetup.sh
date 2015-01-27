@@ -1,3 +1,3 @@
-#!bin/bash/
+#!bin/bash
 
-gksu python3.4 /home/joao/PycharmProjects/Ogarq/InterfaceOgarq.py
+gksudo python3.4 /home/joao/PycharmProjects/Ogarq/InterfaceOgarq.py

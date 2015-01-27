@@ -86,6 +86,15 @@ class MyApp:
         self.button3.bind("<Button-1>", lambda event, esc=self.esc: self.buttonOk(event, esc))
         self.button3.pack(side=BOTTOM)
 
+        #----------------LabelEntradaDoDiretorio
+        self.labelEntrada = Label(self.okFrame, text = "INFORME O DIRETÓRIO")
+        self.labelEntrada.configure(
+            width = label_width,
+            padx = button_padx,
+            pady = button_pady,
+        )
+        self.labelEntrada.pack(side=TOP)
+
         #----------------EntradaDoDiretorio
         self.entradaDir = Entry(self.okFrame)
         self.entradaDir.configure(

@@ -21,7 +21,7 @@ class Ogar:
         self.listFoto = [glob.glob(self.dir+"*.jpg"), glob.glob(self.dir+"*.png"), glob.glob(self.dir+"*.bmp"), glob.glob(self.dir+"*.jpeg"), glob.glob(self.dir+"*.gif")]
         self.listVid = [glob.glob(self.dir+"*.wmv"), glob.glob(self.dir+"*.mp4"), glob.glob(self.dir+"*.mkv"), glob.glob(self.dir+"*.rmvb"), glob.glob(self.dir+"*.flv"), glob.glob(self.dir+"*.3gp"), glob.glob(self.dir+"*.avi"), glob.glob(self.dir+"*.mov")]
         self.listMus = [glob.glob(self.dir+"*.mp3"), glob.glob(self.dir+"*.wav"), glob.glob(self.dir+"*.flac"), glob.glob(self.dir+"*.aac")]
-        self.listScr = [glob.glob(self.dir+"*.bbbsh"), glob.glob(self.dir+"*.aaapy"), glob.glob(self.dir+"*.java"), glob.glob(self.dir+"*.bat")]
+        self.listScr = [glob.glob(self.dir+"*.sh"), glob.glob(self.dir+"*.py"), glob.glob(self.dir+"*.java"), glob.glob(self.dir+"*.bat")]
         self.listDoc = [glob.glob(self.dir+"*.doc"), glob.glob(self.dir+"*.docx"), glob.glob(self.dir+"*.txt"), glob.glob(self.dir+"*.odt")]
 
         print("após as listas.")
