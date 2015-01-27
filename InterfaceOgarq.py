@@ -121,7 +121,7 @@ class MyApp:
 ogarq = Ogar()
 message = messagebox
 root = Tk()
-root.title("Ogarq 2.5")
+root.title("Ogarq 2.6")
 myapp = MyApp(root)
 root.geometry("500x300")
 root.mainloop()
