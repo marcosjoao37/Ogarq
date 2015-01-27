@@ -26,7 +26,7 @@ Músicas e Scripts. Os arquivo serão separados pelas suas
 respectivas extensões. Vários tipos suportados, tais eles são:
 
  |-------------------------------------------------------|
- | Fotos |  Video  |  Documentos  |  Músicas  |  Scripts |
+ | Fotos |  Videos |  Documentos  |  Músicas  |  Scripts |
  |------ |---------|--------------|-----------|----------|
  | .jpg  |  .wmv   |   .doc       |   .mp3    |   .sh    |
  | .png  |  .mp4   |   .docx      |   .wav    |   .bat   |
