@@ -29,6 +29,7 @@ class Ogar:
         print(esc)
 
         try:
+            messagebox.showinfo("INFORMAÇÃO","AGUARDE...")
             print("após o Try.")
             if esc == "1":
                 print("1")
