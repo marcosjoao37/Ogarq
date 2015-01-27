@@ -4,7 +4,9 @@ __author__ = 'João Marcos Silva e Araújo'
 # .jpg, .png, .bmp para a pasta fotos; .flv, .wmv, .mp4 para a pasta vídeos e etc.
 
 from tkinter import messagebox
-import shutil, glob, os
+import shutil
+import glob
+import os
 
 class Ogar:
 
@@ -27,9 +29,6 @@ class Ogar:
 
         #Verificação de existência de pastas com o mesmo nome, se não, faz a criação das pastas.
         self.criarPastas()
-
-        #Dá permissões de super usuário à pasta diretório.
-        os.system("sudo chmod -R 777 "+self.dir)
 
         #Criação das listas com o nome do diretório completo mais o nome do arquivo. Ex: /home/usr/Downloads/foto.jpg.
         self.listFoto = [glob.glob(self.dir+"*.jpg"), glob.glob(self.dir+"*.png"), glob.glob(self.dir+"*.bmp"),
@@ -69,9 +68,6 @@ class Ogar:
             elif esc == "2":
                 print("2")
                 self.copiarArq()
-
-            ##Dá permissões de super usuário à pasta diretório, para retirar a proteção de arquivos.
-            os.system("sudo chmod -R 777 "+self.dir)
 
             #Uma pequena janela com informações.
             messagebox.showinfo("INFORMAÇÃO","TUDO PRONTO E ORGANIZADO!")

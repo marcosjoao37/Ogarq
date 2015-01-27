@@ -49,7 +49,7 @@ class MyApp:
         )
         self.label2.pack(side=BOTTOM)
 
-        #----------------Botão1
+        #Botão1
         self.button1 = Button(self.buttonsFrame)
         self.button1.configure(
             width = button_width,
@@ -61,7 +61,7 @@ class MyApp:
         self.button1.bind("<Button-1>", lambda event, opc="1": self.buttonClicked_b(event, opc))
         self.button1.pack(side=LEFT)
 
-        #----------------Botão2
+        #Botão2
         self.button2 = Button(self.buttonsFrame)
         self.button2.configure(
             width = button_width,
@@ -73,7 +73,7 @@ class MyApp:
         self.button2.bind("<Button-1>", lambda event, opc="2": self.buttonClicked_b(event, opc))
         self.button2.pack(side=RIGHT)
 
-        #----------------Botão3
+        #Botão3
         self.button3 = Button(self.okFrame)
         self.button3.configure(
             width = button_width,
@@ -83,7 +83,7 @@ class MyApp:
         self.button3.bind("<Button-1>", lambda event, esc=self.esc: self.buttonOk(event, esc))
         self.button3.pack(side=BOTTOM)
 
-        #----------------LabelEntradaDoDiretorio
+        #LabelEntradaDoDiretorio
         self.labelEntrada = Label(self.okFrame, text = "INFORME O DIRETÓRIO")
         self.labelEntrada.configure(
             width = label_width,
@@ -92,7 +92,7 @@ class MyApp:
         )
         self.labelEntrada.pack(side=TOP)
 
-        #----------------EntradaDoDiretorio
+        #EntradaDoDiretorio
         self.entradaDir = Entry(self.okFrame)
         self.entradaDir.configure(
             width = button_width_a
