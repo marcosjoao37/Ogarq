@@ -1,8 +1,5 @@
 # coding: utf-8
-
 __author__ = 'João Marcos Silva e Araújo'
-# Organizador em pastas de acordo com os seus respectivos tipos.
-# .jpg, .png, .bmp para a pasta fotos; .flv, .wmv, .mp4 para a pasta vídeos e etc.
 
 from tkinter import *
 from tkinter import messagebox
@@ -121,7 +118,7 @@ class MyApp:
 ogarq = Ogar()
 message = messagebox
 root = Tk()
-root.title("Ogarq 2.7")
+root.title("Ogarq")
 myapp = MyApp(root)
 root.geometry("500x300")
 root.mainloop()
