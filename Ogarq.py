@@ -23,6 +23,9 @@ class Ogar:
         self.listMus = [glob.glob(self.dir+"*.mp3"), glob.glob(self.dir+"*.wav"), glob.glob(self.dir+"*.flac"), glob.glob(self.dir+"*.aac")]
         self.listScr = [glob.glob(self.dir+"*.sh"), glob.glob(self.dir+"*.py"), glob.glob(self.dir+"*.java"), glob.glob(self.dir+"*.bat")]
         self.listDoc = [glob.glob(self.dir+"*.doc"), glob.glob(self.dir+"*.docx"), glob.glob(self.dir+"*.txt"), glob.glob(self.dir+"*.odt")]
+        #NOVOS
+        self.listComp = [glob.glob(self.dir+"*.rar"), glob.glob(self.dir+"*.zip"), glob.glob(self.dir+"*.7zip"), glob.glob(self.dir+"*.tar.gz"), glob.glob(self.dir+"*.tar.xz")]
+        self.listExe = [glob.glob(self.dir+"*.exe"), glob.glob(self.dir+"*.run"), glob.glob(self.dir+"*.msi")]
 
         print("após as listas.")
         print(self.listFoto)
@@ -45,8 +48,8 @@ class Ogar:
             messagebox.showinfo("INFORMAÇÃO","OPSS... ALGO DEU ERRADO.")
 
     def criarPastas(self):
-        if ("Scripts") not in os.listdir("."):
-            os.mkdir(self.dir+"Fotos"), os.mkdir(self.dir+"Vídeos"), os.mkdir(self.dir+"Documentos"), os.mkdir(self.dir+"Músicas"), os.mkdir(self.dir+"Scripts")
+        if ("Scripts__") not in os.listdir("."):
+            os.mkdir(self.dir+"Fotos"), os.mkdir(self.dir+"Vídeos"), os.mkdir(self.dir+"Documentos"), os.mkdir(self.dir+"Músicas"), os.mkdir(self.dir+"Compactados"), os.mkdir(self.dir+"Executáveis"), os.mkdir(self.dir+"Scripts__")
 
         else:
             print("Pastas já existentes.")
@@ -99,16 +102,38 @@ class Ogar:
                         os.chdir("..")
                         shutill.move(arq, self.dir+"Documentos")
 
-            for lista in self.listScr:
+            for lista in self.listComp:
                 for arq in lista:
                     arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Scripts")
+                    os.chdir(self.dir+"Compactados")
                     if os.path.exists(arq):
                         print("Arquivo já existente.")
                         os.chdir("..")
                     else:
                         os.chdir("..")
-                        shutill.move(arq, self.dir+"Scripts")
+                        shutill.move(arq, self.dir+"Compactados")
+
+            for lista in self.listExe:
+                for arq in lista:
+                    arq = (arq.split("/"))[-1]
+                    os.chdir(self.dir+"Executáveis")
+                    if os.path.exists(arq):
+                        print("Arquivo já existente.")
+                        os.chdir("..")
+                    else:
+                        os.chdir("..")
+                        shutill.move(arq, self.dir+"Executáveis")
+
+            for lista in self.listScr:
+                for arq in lista:
+                    arq = (arq.split("/"))[-1]
+                    os.chdir(self.dir+"Scripts__")
+                    if os.path.exists(arq):
+                        print("Arquivo já existente.")
+                        os.chdir("..")
+                    else:
+                        os.chdir("..")
+                        shutill.move(arq, self.dir+"Scripts__")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
@@ -158,16 +183,38 @@ class Ogar:
                         os.chdir("..")
                         shutill.copy2(arq, self.dir+"Documentos")
 
-            for lista in self.listScr:
+            for lista in self.listComp:
                 for arq in lista:
                     arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Scripts")
+                    os.chdir(self.dir+"Compactados")
                     if os.path.exists(arq):
                         print("Arquivo já existente.")
                         os.chdir("..")
                     else:
                         os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Scripts")
+                        shutill.copy2(arq, self.dir+"Compactados")
+
+            for lista in self.listExe:
+                for arq in lista:
+                    arq = (arq.split("/"))[-1]
+                    os.chdir(self.dir+"Executáveis")
+                    if os.path.exists(arq):
+                        print("Arquivo já existente.")
+                        os.chdir("..")
+                    else:
+                        os.chdir("..")
+                        shutill.move(arq, self.dir+"Executáveis")
+
+            for lista in self.listScr:
+                for arq in lista:
+                    arq = (arq.split("/"))[-1]
+                    os.chdir(self.dir+"Scripts__")
+                    if os.path.exists(arq):
+                        print("Arquivo já existente.")
+                        os.chdir("..")
+                    else:
+                        os.chdir("..")
+                        shutill.copy2(arq, self.dir+"Scripts__")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
