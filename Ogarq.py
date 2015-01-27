@@ -31,26 +31,42 @@ class Ogar:
         self.criarPastas()
 
         #Criação das listas com o nome do diretório completo mais o nome do arquivo. Ex: /home/usr/Downloads/foto.jpg.
-        self.listFoto = [glob.glob(self.dir+"*.jpg"), glob.glob(self.dir+"*.png"), glob.glob(self.dir+"*.bmp"),
-                         glob.glob(self.dir+"*.jpeg"), glob.glob(self.dir+"*.gif")]
+        self.listFoto = [] # crica uma lista vazia
+        ext = 'jpg, png, bmp, jpeg, gif'.split(',') # ext é a variavel que conterá as extensões de arquivos de imagem
+        for i in ext: # percorre todos os elementos da lista ext
+            for j in glob.glob(self.dir+'*.' + i): # percorre todas das ocorrencias de arquivos com extensão de imagem
+                self.listFoto.append(j) # salva o caminho dos arquivos de imagem na lista self.listFoto
 
-        self.listVid = [glob.glob(self.dir+"*.wmv"), glob.glob(self.dir+"*.mp4"), glob.glob(self.dir+"*.mkv"),
-                        glob.glob(self.dir+"*.rmvb"), glob.glob(self.dir+"*.flv"), glob.glob(self.dir+"*.3gp"),
-                        glob.glob(self.dir+"*.avi"), glob.glob(self.dir+"*.mov")]
+        self.listMus= []
+        ext = 'mp3, wav, flac, aac'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listMus.append(j)
 
-        self.listMus = [glob.glob(self.dir+"*.mp3"), glob.glob(self.dir+"*.wav"), glob.glob(self.dir+"*.flac"),
-                        glob.glob(self.dir+"*.aac")]
+        self.listScr= []
+        ext = 'sh, py, java'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listScr.append(j)
 
-        self.listScr = [glob.glob(self.dir+"*.sh"), glob.glob(self.dir+"*.py"), glob.glob(self.dir+"*.java"),
-                        glob.glob(self.dir+"*.bat")]
+        self.listDoc= []
+        ext = 'doc, docx, txt, odt'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listDoc.append(j)
 
-        self.listDoc = [glob.glob(self.dir+"*.doc"), glob.glob(self.dir+"*.docx"), glob.glob(self.dir+"*.txt"),
-                        glob.glob(self.dir+"*.odt")]
+        self.listComp= []
+        ext = 'rar, zip, 7zip, tar.gz, tar,xz'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listComp.append(j)
 
-        self.listComp = [glob.glob(self.dir+"*.rar"), glob.glob(self.dir+"*.zip"), glob.glob(self.dir+"*.7zip"),
-                         glob.glob(self.dir+"*.tar.gz"), glob.glob(self.dir+"*.tar.xz")]
+        self.listExe= []
+        ext = 'exe, run, msi'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listExe.append(j)                
 
-        self.listExe = [glob.glob(self.dir+"*.exe"), glob.glob(self.dir+"*.run"), glob.glob(self.dir+"*.msi")]
         #Fim da criação.
 
         #Alguns testes para debbuger.
