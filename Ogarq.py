@@ -172,6 +172,9 @@ class Ogar:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
     def procDir(self, dir):
+        if dir[-1] != "/":
+            dir = dir+"/"
+
         if os.path.isdir(dir):
             self.dir = dir
             messagebox.showinfo("INFORMAÇÃO","DIRETÓRIO ENCONTRADO!")
