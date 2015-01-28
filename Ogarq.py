@@ -31,38 +31,44 @@ class Ogar:
         self.criarPastas()
 
         #Criação das listas com o nome do diretório completo mais o nome do arquivo. Ex: /home/usr/Downloads/foto.jpg.
-        self.listFoto = [] # crica uma lista vazia
-        ext = 'jpg, png, bmp, jpeg, gif'.split(',') # ext é a variavel que conterá as extensões de arquivos de imagem
+        self.listFoto = [] # cria uma lista vazia
+        ext = 'jpg,png,bmp,jpeg,gif'.split(',') # ext é a variavel que conterá as extensões de arquivos de imagem
         for i in ext: # percorre todos os elementos da lista ext
             for j in glob.glob(self.dir+'*.' + i): # percorre todas das ocorrencias de arquivos com extensão de imagem
                 self.listFoto.append(j) # salva o caminho dos arquivos de imagem na lista self.listFoto
 
-        self.listMus= []
-        ext = 'mp3, wav, flac, aac'.split(',')
+        self.listMus = []
+        ext = 'mp3,wav,flac,aac'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listMus.append(j)
 
+        self.listVid= []
+        ext = 'wmv,mp4,mkv,rmvb,flv,3gp,avi,mov'.split(',')
+        for i in ext:
+            for j in glob.glob(self.dir+'*.' + i):
+                self.listVid.append(j)
+
         self.listScr= []
-        ext = 'sh, py, java'.split(',')
+        ext = 'sh,py,java,bat'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listScr.append(j)
 
         self.listDoc= []
-        ext = 'doc, docx, txt, odt'.split(',')
+        ext = 'doc,docx,txt,odt'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listDoc.append(j)
 
         self.listComp= []
-        ext = 'rar, zip, 7zip, tar.gz, tar,xz'.split(',')
+        ext = 'rar,zip,7zip,tar.gz,tar.gx'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listComp.append(j)
 
         self.listExe= []
-        ext = 'exe, run, msi'.split(',')
+        ext = 'exe,run,msi'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listExe.append(j)                
@@ -98,12 +104,13 @@ class Ogar:
     def criarPastas(self):
         #Se está pasta padrão do programa, posterior com dois undercores, ainda não existir na pasta, quer dizer que
         #é a primeira que o programa é executado alí.
-        if ("Scripts__") not in os.listdir("."):
-            os.mkdir(self.dir+"Fotos"), os.mkdir(self.dir+"Vídeos"), os.mkdir(self.dir+"Documentos"), \
-            os.mkdir(self.dir+"Músicas"), os.mkdir(self.dir+"Compactados"), os.mkdir(self.dir+"Executáveis"), \
-            os.mkdir(self.dir+"Scripts__")
+        try:
+            os.mkdir(self.dir+"Fotos_"), os.mkdir(self.dir+"Vídeos_"), os.mkdir(self.dir+"Documentos_"), \
+            os.mkdir(self.dir+"Músicas_"), os.mkdir(self.dir+"Compactados_"), os.mkdir(self.dir+"Executáveis_"), \
+            os.mkdir(self.dir+"Scripts_")
 
-        else:
+        except:
+            messagebox.showinfo("INFORMAÇÃO","PASTAS  JÁ EXISTENTES.")
             print("Pastas já existentes.")
 
     """
@@ -127,73 +134,73 @@ class Ogar:
                 #Alguns testes para debbuger.
                 print(arq)
                 #Fim testes.
-                os.chdir(self.dir+"Fotos")
+                os.chdir(self.dir+"Fotos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Fotos")
+                    shutill.move(arq, self.dir+"Fotos_")
 
             for arq in self.listVid:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Vídeos")
+                os.chdir(self.dir+"Vídeos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Vídeos")
+                    shutill.move(arq, self.dir+"Vídeos_")
 
             for arq in self.listMus:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Músicas")
+                os.chdir(self.dir+"Músicas_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Músicas")
+                    shutill.move(arq, self.dir+"Músicas_")
 
             for arq in self.listDoc:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Documentos")
+                os.chdir(self.dir+"Documentos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Documentos")
+                    shutill.move(arq, self.dir+"Documentos_")
 
             for arq in self.listComp:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Compactados")
+                os.chdir(self.dir+"Compactados_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Compactados")
+                    shutill.move(arq, self.dir+"Compactados_")
 
             for arq in self.listExe:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Executáveis")
+                os.chdir(self.dir+"Executáveis_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Executáveis")
+                    shutill.move(arq, self.dir+"Executáveis_")
 
             for arq in self.listScr:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Scripts__")
+                os.chdir(self.dir+"Scripts_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Scripts__")
+                    shutill.move(arq, self.dir+"Scripts_")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
@@ -201,73 +208,73 @@ class Ogar:
         try:
             for arq in self.listFoto:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Fotos")
+                os.chdir(self.dir+"Fotos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Fotos")
+                    shutill.copy2(arq, self.dir+"Fotos_")
 
             for arq in self.listVid:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Vídeos")
+                os.chdir(self.dir+"Vídeos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Vídeos")
+                    shutill.copy2(arq, self.dir+"Vídeos_")
 
             for arq in self.listMus:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Músicas")
+                os.chdir(self.dir+"Músicas_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Músicas")
+                    shutill.copy2(arq, self.dir+"Músicas_")
 
             for arq in self.listDoc:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Documentos")
+                os.chdir(self.dir+"Documentos_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Documentos")
+                    shutill.copy2(arq, self.dir+"Documentos_")
 
             for arq in self.listComp:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Compactados")
+                os.chdir(self.dir+"Compactados_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Compactados")
+                    shutill.copy2(arq, self.dir+"Compactados_")
 
             for arq in self.listExe:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Executáveis")
+                os.chdir(self.dir+"Executáveis_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.move(arq, self.dir+"Executáveis")
+                    shutill.move(arq, self.dir+"Executáveis_")
 
             for arq in self.listScr:
                 arq = (arq.split("/"))[-1]
-                os.chdir(self.dir+"Scripts__")
+                os.chdir(self.dir+"Scripts_")
                 if os.path.exists(arq):
                     print("Arquivo já existente.")
                     os.chdir("..")
                 else:
                     os.chdir("..")
-                    shutill.copy2(arq, self.dir+"Scripts__")
+                    shutill.copy2(arq, self.dir+"Scripts_")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 

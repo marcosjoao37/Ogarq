@@ -36,23 +36,19 @@ O programa visa a organização de arquivos contidos numa pasta, separando-os po
  ```sh
   $ sudo apt-get install git
  ```
- 
+
 * Python 3.x
  
  ```sh
  $ sudo apt-get install python3.4
  ```
+
 * Tkinter
- 
+
  ```sh
  $ sudo apt-get install python3-tk
  ```
-* GKsudo
 
- ```sh
- $  sudo apt-get install gksu
- ```
- 
 ### Para clonar o projeto:
  
  ```sh
