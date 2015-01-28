@@ -8,7 +8,7 @@ Organize seus arquivos descomplicadamente.
 O programa visa a organização de arquivos contidos numa pasta, separando-os posteriormente em outras pastas criadas pelo próprio programa, nomeando por:
  `Fotos`, `Vídeos`, `Documentos`, `Músicas`, `Scripts`, `Compactados` e `Executáveis`. Os arquivos serão separados pelas suas respectivas extensões. 
 
-#### Execuntando
+#### Execuntando:
 Vá até a pasta onde destes o Clone do/no git, e dê permissões para executar o sh: `chmod +x diretorio/subdiretorio/nomedoarquivo.sh`
 Execute o sh: `sh OgarqSetup.sh`
 
