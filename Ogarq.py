@@ -122,166 +122,152 @@ class Ogar:
     def moverArq(self):
         try:
             print(self.listFoto)
-            for lista in self.listFoto:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    #Alguns testes para debbuger.
-                    print(arq)
-                    #Fim testes.
-                    os.chdir(self.dir+"Fotos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Fotos")
+            for arq in self.listFoto:
+                arq = (arq.split("/"))[-1]
+                #Alguns testes para debbuger.
+                print(arq)
+                #Fim testes.
+                os.chdir(self.dir+"Fotos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Fotos")
 
-            for lista in self.listVid:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Vídeos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Vídeos")
+            for arq in self.listVid:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Vídeos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Vídeos")
 
-            for lista in self.listMus:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Músicas")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Músicas")
+            for arq in self.listMus:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Músicas")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Músicas")
 
-            for lista in self.listDoc:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Documentos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Documentos")
+            for arq in self.listDoc:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Documentos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Documentos")
 
-            for lista in self.listComp:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Compactados")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Compactados")
+            for arq in self.listComp:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Compactados")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Compactados")
 
-            for lista in self.listExe:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Executáveis")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Executáveis")
+            for arq in self.listExe:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Executáveis")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Executáveis")
 
-            for lista in self.listScr:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Scripts__")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Scripts__")
+            for arq in self.listScr:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Scripts__")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Scripts__")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
     def copiarArq(self):
         try:
-            for lista in self.listFoto:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Fotos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Fotos")
+            for arq in self.listFoto:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Fotos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Fotos")
 
-            for lista in self.listVid:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Vídeos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Vídeos")
+            for arq in self.listVid:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Vídeos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Vídeos")
 
-            for lista in self.listMus:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Músicas")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Músicas")
+            for arq in self.listMus:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Músicas")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Músicas")
 
-            for lista in self.listDoc:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Documentos")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Documentos")
+            for arq in self.listDoc:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Documentos")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Documentos")
 
-            for lista in self.listComp:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Compactados")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Compactados")
+            for arq in self.listComp:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Compactados")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Compactados")
 
-            for lista in self.listExe:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Executáveis")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.move(arq, self.dir+"Executáveis")
+            for arq in self.listExe:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Executáveis")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.move(arq, self.dir+"Executáveis")
 
-            for lista in self.listScr:
-                for arq in lista:
-                    arq = (arq.split("/"))[-1]
-                    os.chdir(self.dir+"Scripts__")
-                    if os.path.exists(arq):
-                        print("Arquivo já existente.")
-                        os.chdir("..")
-                    else:
-                        os.chdir("..")
-                        shutill.copy2(arq, self.dir+"Scripts__")
+            for arq in self.listScr:
+                arq = (arq.split("/"))[-1]
+                os.chdir(self.dir+"Scripts__")
+                if os.path.exists(arq):
+                    print("Arquivo já existente.")
+                    os.chdir("..")
+                else:
+                    os.chdir("..")
+                    shutill.copy2(arq, self.dir+"Scripts__")
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
