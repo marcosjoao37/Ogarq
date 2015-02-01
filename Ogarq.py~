@@ -50,7 +50,7 @@ class Ogar:
                 self.listVid.append(j)
 
         self.listScr= []
-        ext = 'sh,py,java,bat'.split(',')
+        ext = 'sh,py,java,bat,c,cs,php,vb,vbs'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listScr.append(j)

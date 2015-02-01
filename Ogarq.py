@@ -56,7 +56,7 @@ class Ogar:
                 self.listScr.append(j)
 
         self.listDoc= []
-        ext = 'doc,docx,txt,odt'.split(',')
+        ext = 'doc,docx,txt,odt,cad,pdf,xlsx,xls,csv,tsv'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listDoc.append(j)
