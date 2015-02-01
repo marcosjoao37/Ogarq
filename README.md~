@@ -20,31 +20,18 @@ Execute o sh: `sh OgarqSetup.sh`
 | .png   | .mp4   |  .docx      | .wav    | .bat    | 
 | .bmp   | .mkv   |  .txt       | .flac   | .py     | 
 | .jpeg  | .rmvb  |  .odt       | .aac    | .java   | 
-| .gif   | .flv   |  .ppt       |         | .cpp    |
-| ------ | .3gp   |  .pptx      |         | .cs     |
-| ------ | .avi   |  .pdf       |         | .c      |
-| ------ | .mov   |  .xls       |         | .vb     |
-| ------ |        |  .cad       |         | .vbs    |
-| ------ |        |  .xlsx      |         | .php    |
-| ------ |        |  .csv       |         |         |
-| ------ |        |  .tsv       |         |         |
-| ------ |        |  .epub      |         |         |
-| ------ |        |  .dot       |         |         |
-| ------ |        |  .dotx      |         |         |
-| ------ |        |  .xps       |         |         |
-
-
+| .gif   | .flv   |          
+| ------ | .3gp   |  
+| ------ | .avi   |  
+| ------ | .mov   |  
 
 | Compactados | Executáveis |
 | ----------- | ----------- |
 | .rar        | .exe        |
 | .zip        | .msi        |
 | .7zip       | .run        |
-| .tar.gz     | .app        |
-| .tar.gx     | .apk        |
-| .7z         | .deb        |
-| .gzip       | .jar        |
-
+| .tar.gz     |
+| .tar.gx     |
 
 ### Necessário:
 
