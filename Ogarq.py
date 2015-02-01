@@ -50,25 +50,25 @@ class Ogar:
                 self.listVid.append(j)
 
         self.listScr= []
-        ext = 'sh,py,java,bat'.split(',')
+        ext = 'sh,py,java,bat,c,cs,php,vb,vbs,cpp'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listScr.append(j)
 
         self.listDoc= []
-        ext = 'doc,docx,txt,odt'.split(',')
+        ext = 'doc,docx,txt,odt,cad,pdf,xlsx,xls,csv,tsv,ppt,pptx,epub,docm,dot,dotx,xps'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listDoc.append(j)
 
         self.listComp= []
-        ext = 'rar,zip,7zip,tar.gz,tar.gx'.split(',')
+        ext = 'rar,zip,7zip,tar.gz,tar.gx,7z,gzip'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listComp.append(j)
 
         self.listExe= []
-        ext = 'exe,run,msi'.split(',')
+        ext = 'exe,run,msi,app,apk,deb,jar'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listExe.append(j)                
