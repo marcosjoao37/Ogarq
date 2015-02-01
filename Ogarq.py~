@@ -56,13 +56,13 @@ class Ogar:
                 self.listScr.append(j)
 
         self.listDoc= []
-        ext = 'doc,docx,txt,odt,cad,pdf,xlsx,xls,csv,tsv,ppt,pptx,epub'.split(',')
+        ext = 'doc,docx,txt,odt,cad,pdf,xlsx,xls,csv,tsv,ppt,pptx,epub,docm,dot,dotx'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listDoc.append(j)
 
         self.listComp= []
-        ext = 'rar,zip,7zip,tar.gz,tar.gx,7z'.split(',')
+        ext = 'rar,zip,7zip,tar.gz,tar.gx,7z,gzip'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listComp.append(j)
