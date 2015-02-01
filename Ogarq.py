@@ -68,7 +68,7 @@ class Ogar:
                 self.listComp.append(j)
 
         self.listExe= []
-        ext = 'exe,run,msi'.split(',')
+        ext = 'exe,run,msi,app,apk'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listExe.append(j)                

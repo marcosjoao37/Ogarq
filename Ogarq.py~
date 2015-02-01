@@ -62,7 +62,7 @@ class Ogar:
                 self.listDoc.append(j)
 
         self.listComp= []
-        ext = 'rar,zip,7zip,tar.gz,tar.gx'.split(',')
+        ext = 'rar,zip,7zip,tar.gz,tar.gx,7z'.split(',')
         for i in ext:
             for j in glob.glob(self.dir+'*.' + i):
                 self.listComp.append(j)
