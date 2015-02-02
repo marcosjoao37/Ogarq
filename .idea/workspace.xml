@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7ff182-e6d3-4b5f-bd62-efa4981978f2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Documentos_/DS1000Z_Programming Guide_EN.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Fotos_/10702026_1494664777479746_902550522909610040_n.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Fotos_/fivetech.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/funcoes/MoverECopiar.py" afterPath="$PROJECT_DIR$/src/funcoes/MoverECopiar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/funcoes/Ogarq.py" afterPath="$PROJECT_DIR$/src/funcoes/Ogarq.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/funcoes/TratamentoDePastas.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py" afterPath="$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ogarq.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="MoverECopiar.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/funcoes/MoverECopiar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1305">
-              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+              <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
               <folding>
                 <element signature="e#59#89#0" expanded="true" />
               </folding>
@@ -42,12 +40,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ogarq.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ogarq.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/funcoes/Ogarq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5032258" vertical-offset="0" max-vertical-offset="775">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#207#237#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,30 +55,18 @@
       <file leaf-file-name="InterfaceOgarq.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/InterfaceOgarq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1100" max-vertical-offset="1875">
+            <state vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1875">
               <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DicionarioDeArquivos.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DicionarioDeArquivos.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.571428" vertical-offset="0" max-vertical-offset="585">
-              <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
-              <folding>
-                <element signature="e#59#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TratamentoDePastas.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/funcoes/TratamentoDePastas.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.30949107" vertical-offset="0" max-vertical-offset="727">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -93,9 +81,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/gui/InterfaceOgarq.py" />
-        <option value="$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py" />
         <option value="$PROJECT_DIR$/src/funcoes/MoverECopiar.py" />
         <option value="$PROJECT_DIR$/src/funcoes/Ogarq.py" />
+        <option value="$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py" />
       </list>
     </option>
   </component>
@@ -382,20 +370,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/funcoes/TratamentoDePastas.py">
+    <entry file="file://$PROJECT_DIR$/src/funcoes/Ogarq.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="885">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.571428" vertical-offset="0" max-vertical-offset="585">
-          <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#59#70#0" expanded="true" />
+            <element signature="e#207#237#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -410,18 +390,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/funcoes/MoverECopiar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1305">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
           <folding>
             <element signature="e#59#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/funcoes/Ogarq.py">
+    <entry file="file://$PROJECT_DIR$/src/funcoes/DicionarioDeArquivos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5032258" vertical-offset="0" max-vertical-offset="775">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.30949107" vertical-offset="0" max-vertical-offset="727">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
