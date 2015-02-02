@@ -1,3 +1,3 @@
 #!bin/bash
 
-python3.4 InterfaceOgarq.py
+python3.4 src/main.py
