@@ -25,7 +25,6 @@ class MoverECopiar:
     def moverSingle(self, arq, dir):
         try:
             try:
-                print (dir)
                 os.mkdir(dir)
             except:
                 pass
@@ -42,7 +41,6 @@ class MoverECopiar:
 
     def moverArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
-            print (docType)
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
                     #self.listFoto.append(arquivo)
@@ -51,7 +49,6 @@ class MoverECopiar:
     def copiarSingle(self, arq, dir):
         try:
             try:
-                print (dir)
                 os.mkdir(dir)
             except:
                 pass
@@ -69,7 +66,6 @@ class MoverECopiar:
 
     def copiarArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
-            print (docType)
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
                     #self.listFoto.append(arquivo)
