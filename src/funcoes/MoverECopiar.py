@@ -5,6 +5,7 @@ from tkinter import messagebox
 import shutil
 import os
 import glob
+from funcoes.DicionarioDeArquivos import DicionarioDeArquivos
 
 class MoverECopiar:
     def __init__(self):
@@ -23,7 +24,7 @@ class MoverECopiar:
     """
 
     def moverArq(self, dir):
-        for docType in self.fileDict:
+        for docType in DicionarioDeArquivos.fileDict:
             for extensao in docType:
                 for arquivo in glob.glob('*.' + extensao):
                     #self.listFoto.append(arquivo)

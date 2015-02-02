@@ -105,9 +105,8 @@ class MyApp:
         if self.esc == "0":
             message.showinfo("ERRO","OPÇÃO INVÁLIDA")
         else:
-            if dda.dicionarioDeArquivos(self.entradaDir.get()):
-                ogarq.leituraEsc(self.esc, dda.dir2, dda.listComp, dda.listFoto, dda.listExe, dda.listDoc, dda.listMus,
-                                 dda.listVid, dda.listScr)
+            #if dda.dicionarioDeArquivos(self.entradaDir.get()):
+            ogarq.leituraEsc(self.esc, self.entradaDir.get())
 
 
     def buttonClicked_b(self, event, opc):
