@@ -22,19 +22,13 @@ class MoverECopiar:
     raiz dada ao programa. Ex: "/home/usr/Downloads/Fotos/foto.jpg" -> "/home/usr/Downloads".
     Faz-se isto com todos os dda, em todas as pastas.
     """
-
-    def moverArq(self, dir):
-        for docType in DicionarioDeArquivos.fileDict:
-            for extensao in docType:
-                for arquivo in glob.glob('*.' + extensao):
-                    #self.listFoto.append(arquivo)
-                    moverArq2(self, arquivo, dir)
-
-    def moverArq2(self, arq, dir):
+    def moverSingle(self, arq, dir):
         try:
-            arq = (arq.split("/"))[-1]
+            #arq = (arq.split("/"))[-1]
+            print (arq)
             try:
-                os.mkdir(self.dir)
+                print (dir)
+                os.mkdir(dir)
             except:
                 pass
             os.chdir(dir)
@@ -47,6 +41,19 @@ class MoverECopiar:
                 shutil.move(arq, dir)
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
+
+    def moverArq(self, dir):
+        print (" dasdsa")
+        for docType in DicionarioDeArquivos.fileDict:
+            print (docType)
+            for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
+                print ("   --"+str(extensao))
+                for arquivo in glob.glob('*.' + extensao):
+                    #self.listFoto.append(arquivo)
+                    print (" fsdfdsfds")
+                    self.moverSingle(arquivo, dir+"/"+docType)
+
+
 
 
     def copiarArq(self, dir, comp, foto, exe, doc, mus, vid, scr):
