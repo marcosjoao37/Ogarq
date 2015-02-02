@@ -4,6 +4,7 @@ __author__ = 'João Marcos Silva e Araújo'
 from tkinter import messagebox
 import shutil
 import os
+import glob
 
 class MoverECopiar:
     def __init__(self):
@@ -21,10 +22,22 @@ class MoverECopiar:
     Faz-se isto com todos os dda, em todas as pastas.
     """
 
-    def moverArq(self, arq, dir):
+    def moverArq(self, dir):
+        for docType in self.fileDict:
+            for extensao in docType:
+                for arquivo in glob.glob('*.' + extensao):
+                    #self.listFoto.append(arquivo)
+                    moverArq2(self, arquivo, dir)
+
+    def moverArq2(self, arq, dir):
         try:
             arq = (arq.split("/"))[-1]
+            try:
+                os.mkdir(self.dir)
+            except:
+                pass
             os.chdir(dir)
+
             if os.path.exists(arq):
                 print("Arquivo já existente.")
                 os.chdir("..")

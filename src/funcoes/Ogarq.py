@@ -6,6 +6,7 @@ __author__ = 'João Marcos Silva e Araújo'
 from tkinter import messagebox
 
 from funcoes.MoverECopiar import MoverECopiar
+import glob
 
 class Ogar:
 
@@ -27,7 +28,7 @@ class Ogar:
             messagebox.showinfo("INFORMAÇÃO","AGUARDE...")
             if esc == "1":
                 print("1")
-                mec.moverArq(dir, comp, foto, exe, doc, mus, vid, scr)
+                mec.moverArq(dir)
             elif esc == "2":
                 print("2")
                 mec.copiarArq(dir, comp, foto, exe, doc, mus, vid, scr)

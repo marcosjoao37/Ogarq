@@ -4,7 +4,7 @@ __author__ = 'João Marcos Silva e Araújo'
 import glob
 
 from funcoes.TratamentoDePastas import TratamentoDePastas
-
+from funcoes.MoverECopiar import MoverECopiar
 
 """
 Dicionário com o nome de todas as extensões de dda.
@@ -40,67 +40,6 @@ class DicionarioDeArquivos:
     classe, 'esc' referente a ESCOLHA de COPIAR ou MOVER or dda; 'dir' referente ao DIRETÓRIO onde estarão os
     dda, que será capturado na área de texto da interface TK, presente no arquivo io/InterfaceOgarq.py.
     """
-    def dicionarioDeArquivos(self, dir):
 
-        # Verificação de existência do diretório.
-        if tdp.procDir(dir):
-            # Criação das listas com o nome do diretório completo mais o nome do arquivo.
-            # Ex: /home/usr/Downloads/foto.jpg.
-
-            # Listas vazias para listar dda
-            self.listComp = []
-            self.listFoto = []
-            self.listExe = []
-            self.listDoc = []
-            self.listMus = []
-            self.listVid = []
-            self.listScr = []
-
-            self.dir2 = tdp.dir
-
-            # Ext é a variavel que conterá as extensões de dda de imagem
-
-            for docType in self.fileDict:
-                for extensao in docType:
-                    for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listFoto.append(arquivo)
-
-            for extensao in self.Foto:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listFoto.append(arquivo)
-
-            for extensao in self.Mus:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listMus.append(arquivo)
-
-            for extensao in self.Vid:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listVid.append(arquivo)
-
-            for extensao in self.Scr:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listScr.append(arquivo)
-
-            for extensao in self.Doc:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listDoc.append(arquivo)
-
-            for extensao in self.Comp:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listComp.append(arquivo)
-
-            for extensao in self.Exe:
-                for arquivo in glob.glob(tdp.dir+'*.' + extensao):
-                    self.listExe.append(arquivo)
-            # Fim da criação.
-
-            # Verificação de existência de pastas com o mesmo nome, se não, faz a criação das pastas.
-            tdp.criarPastas(self.listComp, self.listFoto, self.listExe, self.listDoc, self.listMus,
-                            self.listVid, self.listScr)
-
-            return True
-
-        else:
-            return False
 
 tdp = TratamentoDePastas()
