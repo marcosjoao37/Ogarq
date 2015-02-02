@@ -31,7 +31,7 @@ class Ogar:
                 mec.moverArq(dir)
             elif esc == "2":
                 print("2")
-                mec.copiarArq(dir, comp, foto, exe, doc, mus, vid, scr)
+                mec.copiarArq(dir)
 
             # Uma pequena janela com informações.
             messagebox.showinfo("INFORMAÇÃO","TUDO PRONTO E ORGANIZADO!")

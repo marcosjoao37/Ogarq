@@ -24,8 +24,6 @@ class MoverECopiar:
     """
     def moverSingle(self, arq, dir):
         try:
-            #arq = (arq.split("/"))[-1]
-            print (arq)
             try:
                 print (dir)
                 os.mkdir(dir)
@@ -43,91 +41,41 @@ class MoverECopiar:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
     def moverArq(self, dir):
-        print (" dasdsa")
         for docType in DicionarioDeArquivos.fileDict:
             print (docType)
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
-                print ("   --"+str(extensao))
                 for arquivo in glob.glob('*.' + extensao):
                     #self.listFoto.append(arquivo)
-                    print (" fsdfdsfds")
                     self.moverSingle(arquivo, dir+"/"+docType)
 
-
-
-
-    def copiarArq(self, dir, comp, foto, exe, doc, mus, vid, scr):
+    def copiarSingle(self, arq, dir):
         try:
-            for arq in foto:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Fotos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Fotos_")
+            try:
+                print (dir)
+                os.mkdir(dir)
+            except:
+                pass
+            os.chdir(dir)
 
-            for arq in vid:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Vídeos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Vídeos_")
-
-            for arq in mus:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Músicas_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Músicas_")
-
-            for arq in doc:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Documentos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Documentos_")
-
-            for arq in comp:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Compactados_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Compactados_")
-
-            for arq in exe:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Executáveis_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Executáveis_")
-
-            for arq in scr:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Scripts_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Scripts_")
+            if os.path.exists(arq):
+                print("Arquivo já existente.")
+                os.chdir("..")
+            else:
+                os.chdir("..")
+                #shutil.move(arq, dir)
+                shutil.copy2(arq, dir)
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
+
+    def copiarArq(self, dir):
+        for docType in DicionarioDeArquivos.fileDict:
+            print (docType)
+            for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
+                for arquivo in glob.glob('*.' + extensao):
+                    #self.listFoto.append(arquivo)
+                    self.copiarSingle(arquivo, dir+"/"+docType)
+
+
+
 
 message = messagebox
