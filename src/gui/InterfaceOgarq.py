@@ -3,6 +3,7 @@ __author__ = 'João Marcos Silva e Araújo'
 
 from tkinter import *
 from tkinter import messagebox
+from tkinter import filedialog
 
 from funcoes.DicionarioDeArquivos import DicionarioDeArquivos
 from funcoes.Ogarq import Ogar
@@ -16,7 +17,7 @@ class MyApp:
         label_width = 45
 
         button_width = 15
-        button_width_a = 60
+        button_width_a = 47
         button_padx = "2m"
         button_pady = "1m"
 
@@ -35,7 +36,7 @@ class MyApp:
         self.okFrame.pack(side=BOTTOM, expand=YES)
 
         # Label
-        self.label1 = Label(self.labelFrame, text = "ESCOLHA A OPÇÃO PARA ORGANIZAÇÃO DOS ARQUIVOS")
+        self.label1 = Label(self.labelFrame, text = "ESCOLHA UMA OPÇÃO PARA ORGANIZAÇÃO DOS ARQUIVOS")
         self.label1.configure(
             width = label_width,
             padx = button_padx,
@@ -75,6 +76,39 @@ class MyApp:
         self.button2.bind("<Button-1>", lambda event, opc="2": self.buttonClicked_b(event, opc))
         self.button2.pack(side=RIGHT)
 
+        # LabelSeparador1
+        self.labelSeparador1 = Label(self.okFrame, text = "\n")
+        self.labelSeparador1.configure(
+            width = label_width,
+        )
+        self.labelSeparador1.pack(side=TOP)
+
+        # BotaoEntradaDoDiretorio
+        self.buttonEntrada = Button(self.okFrame)
+        self.buttonEntrada.configure(
+            width = label_width,
+            padx = button_padx,
+            pady = button_pady,
+            text = "ESCOLHA O DIRETÓRIO",
+            background = "BLUE"
+        )
+        self.buttonEntrada.bind("<Button-1>", lambda event: self.buttonEntradaDef(event))
+        self.buttonEntrada.pack(side=TOP)
+
+        # EntradaDoDiretorio
+        self.entradaDir = Entry(self.okFrame, justify=CENTER)
+        self.entradaDir.configure(
+            width = button_width_a
+        )
+        self.entradaDir.pack(side=TOP)
+
+        # LabelSeparador2
+        self.labelSeparador2 = Label(self.okFrame, text = "\n")
+        self.labelSeparador2.configure(
+            width = label_width
+        )
+        self.labelSeparador2.pack(side=TOP)
+
         # Botão3
         self.button3 = Button(self.okFrame)
         self.button3.configure(
@@ -85,28 +119,17 @@ class MyApp:
         self.button3.bind("<Button-1>", lambda event, esc=self.esc: self.buttonOk(event))
         self.button3.pack(side=BOTTOM)
 
-        # LabelEntradaDoDiretorio
-        self.labelEntrada = Label(self.okFrame, text = "INFORME O DIRETÓRIO")
-        self.labelEntrada.configure(
-            width = label_width,
-            padx = button_padx,
-            pady = button_pady,
-        )
-        self.labelEntrada.pack(side=TOP)
-
-        # EntradaDoDiretorio
-        self.entradaDir = Entry(self.okFrame)
-        self.entradaDir.configure(
-            width = button_width_a
-        )
-        self.entradaDir.pack(side=BOTTOM)
+    def buttonEntradaDef(self, event):
+        self.entradaDir.delete(0, END)
+        self.entradaDir.insert(0, filedialog.askdirectory(initialdir="/home", parent=self.myParent, mustexist=True))
 
     def buttonOk(self, event):
         if self.esc == "0":
-            message.showinfo("ERRO","OPÇÃO INVÁLIDA")
+            message.showerror("ERRO","ESCOLHAR COPIAR OU MOVER!")
+        elif self.entradaDir.get() == '':
+            message.showerror("ERRO","DIRETÓRIO INVÁLIDO")
         else:
             ogarq.leituraEsc(self.esc, self.entradaDir.get())
-
 
     def buttonClicked_b(self, event, opc):
         self.esc = opc

@@ -28,6 +28,7 @@ class MoverECopiar:
                 os.mkdir(dir)
             except:
                 pass
+
             os.chdir(dir)
 
             if os.path.exists(arq):
@@ -37,7 +38,7 @@ class MoverECopiar:
                 os.chdir("..")
                 shutil.move(arq, dir)
         except:
-            messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
+            print("-")
 
     def moverArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
@@ -52,6 +53,7 @@ class MoverECopiar:
                 os.mkdir(dir)
             except:
                 pass
+
             os.chdir(dir)
 
             if os.path.exists(arq):
@@ -61,7 +63,7 @@ class MoverECopiar:
                 os.chdir("..")
                 shutil.copy2(arq, dir)
         except:
-            messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
+            print("-")
 
     def copiarArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
