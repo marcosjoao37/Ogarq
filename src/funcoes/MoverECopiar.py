@@ -27,7 +27,7 @@ class MoverECopiar:
             try:
                 os.mkdir(dir)
             except:
-                pass
+                print("Pasta "+dir+" já existente.")
 
             os.chdir(dir)
 
@@ -44,7 +44,6 @@ class MoverECopiar:
         for docType in DicionarioDeArquivos.fileDict:
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
-                    #self.listFoto.append(arquivo)
                     self.moverSingle(arquivo, dir+docType)
 
     def copiarSingle(self, arq, dir):
@@ -52,7 +51,7 @@ class MoverECopiar:
             try:
                 os.mkdir(dir)
             except:
-                pass
+                print("Pasta "+dir+" já existente.")
 
             os.chdir(dir)
 
@@ -70,8 +69,5 @@ class MoverECopiar:
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
                     self.copiarSingle(arquivo, dir+docType)
-
-
-
 
 message = messagebox
