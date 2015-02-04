@@ -44,7 +44,7 @@ class MoverECopiar:
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
                     #self.listFoto.append(arquivo)
-                    self.moverSingle(arquivo, dir+"/"+docType)
+                    self.moverSingle(arquivo, dir+docType)
 
     def copiarSingle(self, arq, dir):
         try:
@@ -59,7 +59,6 @@ class MoverECopiar:
                 os.chdir("..")
             else:
                 os.chdir("..")
-                #shutil.move(arq, dir)
                 shutil.copy2(arq, dir)
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
@@ -68,8 +67,7 @@ class MoverECopiar:
         for docType in DicionarioDeArquivos.fileDict:
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
-                    #self.listFoto.append(arquivo)
-                    self.copiarSingle(arquivo, dir+"/"+docType)
+                    self.copiarSingle(arquivo, dir+docType)
 
 
 

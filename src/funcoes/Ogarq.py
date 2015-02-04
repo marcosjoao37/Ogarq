@@ -6,7 +6,6 @@ __author__ = 'João Marcos Silva e Araújo'
 from tkinter import messagebox
 
 from funcoes.MoverECopiar import MoverECopiar
-import glob
 
 class Ogar:
 
@@ -22,6 +21,8 @@ class Ogar:
     dda, que será capturado na área de texto da interface TK, presente no arquivo src/gui/InterfaceOgarq.py.
     """
     def leituraEsc(self, esc, dir):
+        if not dir.endswith("/"):
+            dir = dir+"/"
 
         # Verificação da escolha (COPIAR ou MOVER) e execução da função escolhida pelo usuário.
         try:

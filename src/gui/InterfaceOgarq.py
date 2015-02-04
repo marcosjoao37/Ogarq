@@ -105,7 +105,6 @@ class MyApp:
         if self.esc == "0":
             message.showinfo("ERRO","OPÇÃO INVÁLIDA")
         else:
-            #if dda.dicionarioDeArquivos(self.entradaDir.get()):
             ogarq.leituraEsc(self.esc, self.entradaDir.get())
 
 
