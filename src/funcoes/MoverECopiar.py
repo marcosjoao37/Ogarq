@@ -4,6 +4,8 @@ __author__ = 'João Marcos Silva e Araújo'
 from tkinter import messagebox
 import shutil
 import os
+import glob
+from funcoes.DicionarioDeArquivos import DicionarioDeArquivos
 
 class MoverECopiar:
     def __init__(self):
@@ -20,152 +22,56 @@ class MoverECopiar:
     raiz dada ao programa. Ex: "/home/usr/Downloads/Fotos/foto.jpg" -> "/home/usr/Downloads".
     Faz-se isto com todos os dda, em todas as pastas.
     """
-    def moverArq(self, dir, comp, foto, exe, doc, mus, vid, scr):
+    def moverSingle(self, arq, dir):
         try:
-            for arq in foto:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Fotos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Fotos_")
+            try:
+                os.mkdir(dir)
+            except:
+                pass
+            os.chdir(dir)
 
-            for arq in vid:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Vídeos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Vídeos_")
-
-            for arq in mus:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Músicas_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Músicas_")
-
-            for arq in doc:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Documentos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Documentos_")
-
-            for arq in comp:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Compactados_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Compactados_")
-
-            for arq in exe:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Executáveis_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Executáveis_")
-
-            for arq in scr:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Scripts_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Scripts_")
+            if os.path.exists(arq):
+                print("Arquivo já existente.")
+                os.chdir("..")
+            else:
+                os.chdir("..")
+                shutil.move(arq, dir)
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
 
-    def copiarArq(self, dir, comp, foto, exe, doc, mus, vid, scr):
+    def moverArq(self, dir):
+        for docType in DicionarioDeArquivos.fileDict:
+            for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
+                for arquivo in glob.glob('*.' + extensao):
+                    #self.listFoto.append(arquivo)
+                    self.moverSingle(arquivo, dir+"/"+docType)
+
+    def copiarSingle(self, arq, dir):
         try:
-            for arq in foto:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Fotos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Fotos_")
+            try:
+                os.mkdir(dir)
+            except:
+                pass
+            os.chdir(dir)
 
-            for arq in vid:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Vídeos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Vídeos_")
-
-            for arq in mus:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Músicas_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Músicas_")
-
-            for arq in doc:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Documentos_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Documentos_")
-
-            for arq in comp:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Compactados_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Compactados_")
-
-            for arq in exe:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Executáveis_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.move(arq, dir+"Executáveis_")
-
-            for arq in scr:
-                arq = (arq.split("/"))[-1]
-                os.chdir(dir+"Scripts_")
-                if os.path.exists(arq):
-                    print("Arquivo já existente.")
-                    os.chdir("..")
-                else:
-                    os.chdir("..")
-                    shutil.copy2(arq, dir+"Scripts_")
+            if os.path.exists(arq):
+                print("Arquivo já existente.")
+                os.chdir("..")
+            else:
+                os.chdir("..")
+                #shutil.move(arq, dir)
+                shutil.copy2(arq, dir)
         except:
             messagebox.showinfo("ERRO","OPS, ALGO DEU ERRADO...")
+
+    def copiarArq(self, dir):
+        for docType in DicionarioDeArquivos.fileDict:
+            for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
+                for arquivo in glob.glob('*.' + extensao):
+                    #self.listFoto.append(arquivo)
+                    self.copiarSingle(arquivo, dir+"/"+docType)
+
+
+
 
 message = messagebox

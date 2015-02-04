@@ -6,6 +6,7 @@ __author__ = 'João Marcos Silva e Araújo'
 from tkinter import messagebox
 
 from funcoes.MoverECopiar import MoverECopiar
+import glob
 
 class Ogar:
 
@@ -20,21 +21,22 @@ class Ogar:
     classe, 'esc' referente a ESCOLHA de COPIAR ou MOVER or dda; 'dir' referente ao DIRETÓRIO onde estarão os
     dda, que será capturado na área de texto da interface TK, presente no arquivo src/gui/InterfaceOgarq.py.
     """
-    def leituraEsc(self, esc, dir, comp, foto, exe, doc, mus, vid, scr):
+    def leituraEsc(self, esc, dir):
 
         # Verificação da escolha (COPIAR ou MOVER) e execução da função escolhida pelo usuário.
         try:
             messagebox.showinfo("INFORMAÇÃO","AGUARDE...")
             if esc == "1":
                 print("1")
-                mec.moverArq(dir, comp, foto, exe, doc, mus, vid, scr)
+                mec.moverArq(dir)
             elif esc == "2":
                 print("2")
-                mec.copiarArq(dir, comp, foto, exe, doc, mus, vid, scr)
+                mec.copiarArq(dir)
 
             # Uma pequena janela com informações.
             messagebox.showinfo("INFORMAÇÃO","TUDO PRONTO E ORGANIZADO!")
-        except:
+        except Exception as ssw:
+            print (ssw)
             # Outra pequena janela com informações.
             messagebox.showinfo("INFORMAÇÃO","OPSS... ALGO DEU ERRADO... OGARQ")
 
