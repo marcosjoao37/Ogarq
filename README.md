@@ -26,13 +26,15 @@ Execute o sh: `sh OgarqSetup.sh`
 | ------ | .mov   |  .xls       |         | .vb     |
 | ------ |        |  .cad       |         | .vbs    |
 | ------ |        |  .xlsx      |         | .php    |
-| ------ |        |  .csv       |         |         |
+| ------ |        |  .csv       |         | .js     |
 | ------ |        |  .tsv       |         |         |
 | ------ |        |  .epub      |         |         |
 | ------ |        |  .dot       |         |         |
 | ------ |        |  .dotx      |         |         |
 | ------ |        |  .xps       |         |         |
-
+| ------ |        |  .log       |         |         |
+| ------ |        |  .pps       |         |         |
+| ------ |        |  .ppsx      |         |         |
 
 
 | Compactados | Executáveis |
