@@ -4,8 +4,8 @@ __author__ = 'João Marcos Silva e Araújo'
 # .jpg, .png, .bmp para a pasta fotos; .flv, .wmv, .mp4 para a pasta vídeos e etc.
 
 from tkinter import messagebox
-
 from funcoes.MoverECopiar import MoverECopiar
+import os
 
 class Ogar:
 
@@ -23,8 +23,9 @@ class Ogar:
     def leituraEsc(self, esc, dir):
         if not dir.endswith("/"):
             dir = dir+"/"
+            os.chdir(dir)
 
-        # Verificação da escolha (COPIAR ou MOVER) e execução da função escolhida pelo usuário.
+        # Verificação da escolha (COPIAR ou MOVER) e executa a função escolhida pelo usuário.
         try:
             messagebox.showinfo("INFORMAÇÃO","AGUARDE...")
             if esc == "1":

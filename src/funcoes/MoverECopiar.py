@@ -30,7 +30,6 @@ class MoverECopiar:
                 print("Pasta "+dir+" já existente.")
 
             os.chdir(dir)
-
             if os.path.exists(arq):
                 print("Arquivo já existente.")
                 os.chdir("..")
@@ -54,7 +53,6 @@ class MoverECopiar:
                 print("Pasta "+dir+" já existente.")
 
             os.chdir(dir)
-
             if os.path.exists(arq):
                 print("Arquivo já existente.")
                 os.chdir("..")
