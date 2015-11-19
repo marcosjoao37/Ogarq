@@ -2,7 +2,8 @@
 __author__ = 'João Marcos Silva e Araújo'
 
 """
-Dicionário com o nome de todas as extensões de dda.
+*dda = Dicionário de Arquivos
+Dicionário com o nome de todas as extensões de elementos do dda*.
 """
 class DicionarioDeArquivos:
 
