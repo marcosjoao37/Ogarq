@@ -13,5 +13,5 @@ class DicionarioDeArquivos:
                 "Scripts_": 'sh,py,java,bat,c,cs,php,vb,vbs,cpp,html',
                 "Documentos_": 'doc,docx,txt,odt,cad,pdf,xlsx,xls,csv,tsv,ppt,pptx,epub,docm,dot,dotx,xps',
                 "Músicas_": 'mp3,wav,flac,aac',
-                "Vídeos_": 'wmv,mp4,mkv,rmvb,flv,3gp,avi,mov'
+                "Vídeos_": 'wmv,mp4,mkv,rmvb,flv,3gp,avi,mov,mpg'
                 }

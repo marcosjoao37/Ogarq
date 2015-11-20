@@ -1,7 +1,7 @@
 Ogarq
 =====
 Organize seus arquivos descomplicadamente.
-> TESTADO NO UBUNTU - AINDA NÃO TESTADO NO WINDOWS!
+> Testado no Ubuntu - Ainda não testado no Windows!
 
 #### Objetivo:
 
@@ -24,7 +24,7 @@ Execute o sh: `sh OgarqSetup.sh`
 | ------ | .3gp   |  .pptx      |         | .cs     |
 | ------ | .avi   |  .pdf       |         | .c      |
 | ------ | .mov   |  .xls       |         | .vb     |
-| ------ |        |  .cad       |         | .vbs    |
+| ------ | .mpg   |  .cad       |         | .vbs    |
 | ------ |        |  .xlsx      |         | .php    |
 | ------ |        |  .csv       |         |         |
 | ------ |        |  .tsv       |         |         |

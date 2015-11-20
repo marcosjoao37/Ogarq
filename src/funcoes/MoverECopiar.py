@@ -1,7 +1,6 @@
 # coding: utf-8
 __author__ = 'João Marcos Silva e Araújo'
 
-from tkinter import messagebox
 import shutil
 import os
 import glob
@@ -23,22 +22,22 @@ class MoverECopiar:
     raiz dada ao programa. Ex: "/home/usr/Downloads/Fotos/foto.jpg" -> "/home/usr/Downloads".
     Faz-se isto com todos os elementos no dda*, em todas as pastas.
     """
+
     def moverSingle(self, arq, dir):
         try:
             try:
                 os.mkdir(dir)
             except:
-                print("Pasta "+dir+" já existente.")
+                pass
 
             os.chdir(dir)
             if os.path.exists(arq):
-                print("Arquivo já existente.")
                 os.chdir("..")
             else:
                 os.chdir("..")
                 shutil.move(arq, dir)
         except:
-            print("-")
+            pass
 
     def moverArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
@@ -51,22 +50,19 @@ class MoverECopiar:
             try:
                 os.mkdir(dir)
             except:
-                print("Pasta "+dir+" já existente.")
+                pass
 
             os.chdir(dir)
             if os.path.exists(arq):
-                print("Arquivo já existente.")
                 os.chdir("..")
             else:
                 os.chdir("..")
                 shutil.copy2(arq, dir)
         except:
-            print("-")
+            pass
 
     def copiarArq(self, dir):
         for docType in DicionarioDeArquivos.fileDict:
             for extensao in DicionarioDeArquivos.fileDict[docType].split(','):
                 for arquivo in glob.glob('*.' + extensao):
                     self.copiarSingle(arquivo, dir+docType)
-
-message = messagebox
