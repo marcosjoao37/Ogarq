@@ -7,11 +7,9 @@ from src.funcoes.move_and_copy import MoveAndCopy
 from sys import exit
 import os
 
-mac = MoveAndCopy()
-
 class Controller:
     def __init__(self):
-        pass
+        self.mac = MoveAndCopy()
 
     def workOnChoice(self, choice, directory):
         if(os.name == "posix"):
@@ -29,9 +27,9 @@ class Controller:
             exit(0)
         try:
             if choice == "MOVE":
-                mac.moveFiles(directory)
+                self.mac.moveFiles(directory)
             elif choice == "COPY":
-                mac.copyFiles(directory)
+                self.mac.copyFiles(directory)
             else:
                 messagebox.showerror("ERROR","Any choice requested!")
         except Exception as error:

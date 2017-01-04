@@ -1,7 +1,6 @@
 Ogarq
 =====
 Organize seus arquivos descomplicadamente.
-> Testado no Ubuntu - Ainda não testado no Windows!
 
 #### Objetivo:
 
@@ -44,6 +43,7 @@ O programa visa a organização de arquivos contidos numa pasta, separando-os po
 
 ### Necessário:
 
+## Linux:
 * Python 3.x
  
  ```sh
@@ -55,6 +55,12 @@ O programa visa a organização de arquivos contidos numa pasta, separando-os po
  ```sh
  $ sudo apt-get install python3-tk
  ```
+
+## Windows:
+* Python 3.x
+```sh
+Link: https://www.python.org/downloads/
+```
 
 ### Para clonar o projeto:
 

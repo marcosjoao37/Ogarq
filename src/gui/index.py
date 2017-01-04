@@ -12,7 +12,6 @@ from src.funcoes.controller import Controller
 class Index:
     def __init__(self, parent):
         self.parent = parent
-        self.controller = Controller()
         self.fonte = ("Verdana", "16", "bold")
 
         # Menu bar
@@ -65,6 +64,7 @@ class Index:
             messagebox.showinfo("INFORMATION","Invalide directory!")
         else:
             self.status_label['text'] = "Organizing..."
+            self.controller = Controller()
             self.controller.workOnChoice("MOVE", self.input_dir.get())
             self.status_label['text'] = "DONE!"
 
