@@ -8,10 +8,6 @@ Organize seus arquivos descomplicadamente.
 O programa visa a organização de arquivos contidos numa pasta, separando-os posteriormente em outras pastas criadas pelo próprio programa, nomeando por:
  `Fotos`, `Vídeos`, `Documentos`, `Músicas`, `Scripts`, `Compactados` e `Executáveis`. Os arquivos serão separados pelas suas respectivas extensões. 
 
-#### Execuntando:
-Vá até a pasta onde destes o Clone do/no git, e dê permissões para executar o sh: `chmod +x diretorio/subdiretorio/nomedoarquivo.sh`
-Execute o sh: `sh OgarqSetup.sh`
-
 #### Tipos suportados:
 
 | Fotos  | Video  |  Documentos | Músicas | Scripts | 
@@ -51,7 +47,7 @@ Execute o sh: `sh OgarqSetup.sh`
 * Python 3.x
  
  ```sh
- $ sudo apt-get install python3.4
+ $ sudo apt-get install python3
  ```
 
 * Tkinter
@@ -69,6 +65,5 @@ Execute o sh: `sh OgarqSetup.sh`
  ```
  
  ```sh
- $ sudo apt-get install git
  $ git clone https://github.com/marcosjoao37/Ogarq
  ```
