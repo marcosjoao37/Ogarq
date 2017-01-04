@@ -48,12 +48,6 @@ Execute o sh: `sh OgarqSetup.sh`
 
 ### Necessário:
 
-* Git
-
- ```sh
-  $ sudo apt-get install git
- ```
-
 * Python 3.x
  
  ```sh
@@ -67,7 +61,14 @@ Execute o sh: `sh OgarqSetup.sh`
  ```
 
 ### Para clonar o projeto:
+
+* Git
+
+ ```sh
+  $ sudo apt-get install git
+ ```
  
  ```sh
+ $ sudo apt-get install git
  $ git clone https://github.com/marcosjoao37/Ogarq
  ```

@@ -1,21 +1,26 @@
 # coding: utf-8
-__author__ = 'João Marcos Silva e Araújo'
+__author__ = "João Marcos S. e Araújo"
+__email__ = "marcosjoao37@hotmail.com.br"
 
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
+from threading import Thread
 import tkinter.ttk as ttk
+import time
 
 from funcoes.Ogarq import Ogar
 
 #Cor padrão do sistema para Ubuntu
 defaultColor = "#d9d9d9"
 
+Ogarq = Ogar()
+
 class MyApp:
     def __init__(self, parent):
 
-        #self.esc é a ESColha, mover = 1, copiar = 2
-        self.esc = "0"
+        #self.choice: move = 1, copy = 2, none = 0
+        self.choice = "0"
 
         label_width = 45
 
@@ -41,7 +46,7 @@ class MyApp:
         self.okFrame.pack(side=TOP)
 
         # Label
-        self.label1 = Label(self.labelFrame, text = "Escolha uma das opções abaixo para organizar seus arquivos")
+        self.label1 = Label(self.labelFrame, text = "Choose one of the options below to organize your files")
         self.label1.configure(
             width = label_width,
             padx = button_padx,
@@ -55,11 +60,11 @@ class MyApp:
             width = button_width,
             padx = button_padx,
             pady = button_pady,
-            text = "Mover",
+            text = "Move",
             background = defaultColor,
             activebackground = "sea green"
         )
-        self.button1.bind("<Button-1>", lambda event, opc="1": self.buttonClicked_move(event, opc))
+        self.button1.bind("<Button-1>", lambda event, choice="1": self.buttonClicked_move(event, choice))
         self.button1.pack(side=LEFT)
 
         # Botão2
@@ -68,11 +73,11 @@ class MyApp:
             width = button_width,
             padx = button_padx,
             pady = button_pady,
-            text = "Copiar",
+            text = "Copy",
             background = defaultColor,
             activebackground = "sea green"
         )
-        self.button2.bind("<Button-1>", lambda event, opc="2": self.buttonClicked_copy(event, opc))
+        self.button2.bind("<Button-1>", lambda event, choice="2": self.buttonClicked_copy(event, choice))
         self.button2.pack(side=RIGHT)
 
         # LabelSeparador1
@@ -115,9 +120,10 @@ class MyApp:
             width = button_width,
             padx = button_padx,
             text = "Organizar!",
+            background = defaultColor,
             activebackground = "sea green"
         )
-        self.button3.bind("<Button-1>", lambda event, esc=self.esc: self.buttonOk(event))
+        self.button3.bind("<Button-1>", lambda event, choice=self.choice: self.buttonOk(event))
         self.button3.pack(side=TOP)
 
         # LabelSeparador3
@@ -127,7 +133,7 @@ class MyApp:
         )
         self.labelSeparador3.pack(side=TOP)
 
-        # Este elemento abaixo estão invisíveis! Eles apenas aparecerão quando o usuário apertar o botão "OK"
+        # Estes elementos abaixo estão invisíveis! Eles apenas aparecerão quando o usuário apertar o botão "OK"
         # Label4
         self.label4 = Label(self.okFrame, text = "Tarefa em andamento...")
         self.label4.configure(
@@ -144,10 +150,10 @@ class MyApp:
         self.entradaDir.insert(0, filedialog.askdirectory(initialdir="~", parent=self.myParent, mustexist=True))
 
     def buttonOk(self, event):
-        if self.esc == "0":
-            message.showerror("ERRO","Escolha copiar ou mover!")
+        if self.choice == "0":
+            messagebox.showinfo("INFORMATION","Choose MOVE or COPY!")
         elif self.entradaDir.get() == '':
-            message.showerror("ERRO","Diretório inválido")
+            messagebox.showinfo("INFORMATION","Invalide directory!")
         else:
             # Widgets que estavam invisíveis aparecem
             # Aqui está tendo um problema, no qual a barra do progressbar não se move.
@@ -157,31 +163,28 @@ class MyApp:
             self.barraProgress.start()
             self.myParent.update()
             # Inicia as tarefas
-            ogarq.leituraEsc(self.esc, self.entradaDir.get())
+            Ogarq.workOnChoice(self.choice, self.entradaDir.get())
             # Deixa novamente invisível a barra de progresso e muda o nome da label4 para "Tarefa concluída!"
             self.barraProgress.stop()
             self.barraProgress.pack_forget()
             self.label4.configure(text="Tarefa concluída!")
 
-    def buttonClicked_move(self,event,opc):
+    def buttonClicked_move(self,event,choice):
         if(self.button1["background"] == defaultColor):
-            self.esc = opc
+            self.choice = choice
             self.button1["background"] = "green"
             self.button2["background"] = defaultColor
         elif(self.button1["background"] == "green"):
-            self.esc = "0"
+            self.choice = "0"
             self.button1["background"] = defaultColor
             self.button2["background"] = defaultColor
 
-    def buttonClicked_copy(self,event, opc):
+    def buttonClicked_copy(self,event,choice):
         if(self.button2["background"] == defaultColor):
-            self.esc = opc
+            self.choice = choice
             self.button1["background"] = defaultColor
             self.button2["background"] = "green"
         elif(self.button2["background"] == "green"):
-            self.esc = "0"
+            self.choice = "0"
             self.button1["background"] = defaultColor
             self.button2["background"] = defaultColor
-
-message = messagebox
-ogarq = Ogar()
