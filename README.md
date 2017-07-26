@@ -8,8 +8,14 @@ O programa visa a organização de arquivos contidos numa pasta, separando-os po
  `Fotos`, `Vídeos`, `Documentos`, `Músicas`, `Scripts`, `Compactados` e `Executáveis`. Os arquivos serão separados pelas suas respectivas extensões.
 
 #### Como executar:
+* Linux
 ```sh
 $ python3 main.py
+```
+
+* Windows
+```sh
+Apenas dê dois cliques no arquivo.
 ```
 
 #### Tipos suportados:
