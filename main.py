@@ -17,7 +17,7 @@ import os
 parent = Tk()
 
 parent.resizable(width=False, height=False)
-icon = PhotoImage(file="src/icon.png")
+icon = PhotoImage(file="./src/icon.png")
 parent.tk.call('wm', 'iconphoto', parent._w, icon)
 parent.title('Ogarq')
 parent.eval("tk::PlaceWindow %s center" % parent.winfo_pathname(parent.winfo_id()))
