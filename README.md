@@ -20,36 +20,39 @@ Apenas dê dois cliques no arquivo.
 
 #### Tipos suportados:
 
-| Fotos  | Video  |  Documentos | Músicas | Scripts |
-| ------ | ------ |  ---------- | ------- | ------- |
-| .jpg   | .wmv   |  .doc       | .mp3    | .sh     |
-| .png   | .mp4   |  .docx      | .wav    | .bat    |
-| .bmp   | .mkv   |  .txt       | .flac   | .py     |
-| .jpeg  | .rmvb  |  .odt       | .aac    | .java   |
-| .gif   | .flv   |  .ppt       |         | .cpp    |
-| ------ | .3gp   |  .pptx      |         | .cs     |
-| ------ | .avi   |  .pdf       |         | .c      |
-| ------ | .mov   |  .xls       |         | .vb     |
-| ------ | .mpg   |  .cad       |         | .vbs    |
-| ------ |        |  .xlsx      |         | .php    |
-| ------ |        |  .csv       |         |         |
-| ------ |        |  .tsv       |         |         |
-| ------ |        |  .epub      |         |         |
-| ------ |        |  .dot       |         |         |
-| ------ |        |  .dotx      |         |         |
-| ------ |        |  .xps       |         |         |
+| Fotos  | Video  |  Documentos | Músicas | Scripts | Compactados |
+| ------ | ------ |  ---------- | ------- | ------- | ----------- |
+| .jpg   | .wmv   |  .doc       | .mp3    | .sh     | .rar        |
+| .png   | .mp4   |  .docx      | .wav    | .bat    | .zip        |
+| .bmp   | .mkv   |  .txt       | .flac   | .py     | .7zip       |
+| .jpeg  | .rmvb  |  .odt       | .aac    | .java   | .tar.gz     |
+| .gif   | .flv   |  .ppt       |         | .cpp    | .tar.gx     |
+| ------ | .3gp   |  .pptx      |         | .cs     | .7z         |
+| ------ | .avi   |  .pdf       |         | .c      | .gzip       |
+| ------ | .mov   |  .xls       |         | .vb     |             |
+| ------ | .mpg   |  .cad       |         | .vbs    |             |
+| ------ |        |  .xlsx      |         | .php    |             |
+| ------ |        |  .csv       |         | .sql    |             |
+| ------ |        |  .tsv       |         | .js     |             |
+| ------ |        |  .epub      |         | .ts     |             |
+| ------ |        |  .dot       |         |         |             |
+| ------ |        |  .dotx      |         |         |             |
+| ------ |        |  .xps       |         |         |             |
+| ------ |        |  .json      |         |         |             |
+| ------ |        |  .csv       |         |         |             |
+| ------ |        |  .xml       |         |         |             |
 
 
 
-| Compactados | Executáveis |
-| ----------- | ----------- |
-| .rar        | .exe        |
-| .zip        | .msi        |
-| .7zip       | .run        |
-| .tar.gz     | .app        |
-| .tar.gx     | .apk        |
-| .7z         | .deb        |
-| .gzip       | .jar        |
+| Desenvolvimento  | Executáveis |
+| ---------------- | ----------- |
+| .mobileprovision | .exe        |
+| .p12             | .msi        |
+| .keystore        | .run        |
+| ---------------- | .app        |
+| ---------------- | .apk        |
+| ---------------- | .deb        |
+| ---------------- | .jar        |
 
 
 ### Requerimentos:
